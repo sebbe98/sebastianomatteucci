@@ -1,66 +1,156 @@
 <!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site in Construction</title>
-    <style>
-        body {
-            display: block;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-        }
-        .container {
-            background: white;
-            display: block;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column; /* Disposizione verticale */
-            align-items: center;
-        }
-        h1 {
-            font-size: 2rem;
-            color: #333;
-        }
-        p {
-            font-size: 1.2rem;
-            color: #666;
-        }
-        .icon {
-            font-size: 50px;
-            margin-bottom: 10px;
-        }
-        .cookie {
-            margin-top: 20px; /* Aggiunge spazio sopra il banner dei cookie */
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="icon">🚧</div>
-        <h1>Sito in Costruzione</h1>
-        <p>Sebastiano Matteucci</p>
-    </div>
-    <div class="cookie">
-        <!-- Cookie Consent by FreePrivacyPolicy.com https://www.FreePrivacyPolicy.com -->
-        <script type="text/javascript" src="//www.freeprivacypolicy.com/public/cookie-consent/4.2.0/cookie-consent.js" charset="UTF-8"></script>
-        <script type="text/javascript" charset="UTF-8">
-        document.addEventListener('DOMContentLoaded', function () {
-        cookieconsent.run({"notice_banner_type":"interstitial","consent_type":"express","palette":"dark","language":"en","page_load_consent_levels":["strictly-necessary"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_name":"sebastianomatteucci.it"});
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sebastiano Matteucci - Portfolio</title>
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <h1>SM</h1>
+        <nav class="desktop-menu">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="burger-menu">
+          <i class="fa-solid fa-bars burger-icon"></i>
+        </div>
+      </div>
+      <nav class="mobile-menu">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <img src="img/propic.JPG" alt="Sebastiano Matteucci" />
+        <h1>Sebastiano Matteucci</h1>
+        <p>Freelance Developer</p>
+        <button>Hire Me</button>
+        <div class="social-card">
+          <a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter fa-2x"></i></a>
+          <a href="#"><i class="fa-solid fa-envelope fa-2x"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>
+        Sono un freelance developer appassionato di tecnologia e design. Mi
+        piace creare soluzioni semplici ed eleganti per problemi complessi.
+      </p>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Project 1</h3>
+          <p>Descrizione breve del progetto.</p>
+        </div>
+        <div class="project-card">
+          <h3>Project 2</h3>
+          <p>Descrizione breve del progetto.</p>
+        </div>
+        <div class="project-card">
+          <h3>Project 3</h3>
+          <p>Descrizione breve del progetto.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>
+        Scrivimi a: <a href="mailto:example@email.com">example@email.com</a>
+      </p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Sebastiano Matteucci. All rights reserved.</p>
+    </footer>
+
+    <script>
+      const burger = document.querySelector(".burger-menu");
+      const mobileMenu = document.querySelector(".mobile-menu");
+      const burgerIcon = document.querySelector(".burger-icon");
+
+      burger.addEventListener("click", () => {
+        mobileMenu.classList.toggle("active");
+        burgerIcon.classList.toggle("fa-bars");
+        burgerIcon.classList.toggle("fa-times"); // Icona "X" quando aperto
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          document.querySelector(targetId).scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+          if (mobileMenu.classList.contains("active")) {
+            mobileMenu.classList.remove("active");
+            burgerIcon.classList.remove("fa-times");
+            burgerIcon.classList.add("fa-bars");
+          }
         });
-        </script>
+      });
+    </script>
+    <!-- Cookie Consent by FreePrivacyPolicy.com https://www.FreePrivacyPolicy.com -->
+    <script
+      type="text/javascript"
+      src="//www.freeprivacypolicy.com/public/cookie-consent/4.2.0/cookie-consent.js"
+      charset="UTF-8"
+    ></script>
+    <script type="text/javascript" charset="UTF-8">
+      document.addEventListener("DOMContentLoaded", function () {
+        cookieconsent.run({
+          notice_banner_type: "standalone",
+          consent_type: "express",
+          palette: "dark",
+          language: "en",
+          page_load_consent_levels: ["strictly-necessary"],
+          notice_banner_reject_button_hide: false,
+          preferences_center_close_button_hide: false,
+          page_refresh_confirmation_buttons: false,
+          website_name: "Sebastiano Matteucci",
+          website_privacy_policy_url:
+            "www.sebastianomatteucci.it/privacypolicy.html",
+        });
+      });
+    </script>
 
-        <noscript>Cookie Consent by <a href="https://www.freeprivacypolicy.com/">Free Privacy Policy Generator</a></noscript>
-        <!-- End Cookie Consent by FreePrivacyPolicy.com https://www.FreePrivacyPolicy.com -->
+    <noscript
+      >Cookie Consent by
+      <a href="https://www.freeprivacypolicy.com/"
+        >Free Privacy Policy Generator</a
+      ></noscript
+    >
+    <!-- End Cookie Consent by FreePrivacyPolicy.com https://www.FreePrivacyPolicy.com -->
 
-        <a href="#" id="open_preferences_center">Update cookies preferences</a>
-    </div>
-</body>
+    <!-- Below is the link that users can use to open Preferences Center to change their preferences. Do not modify the ID parameter. Place it where appropriate, style it as needed. -->
+
+    <a href="#" id="open_preferences_center">Update cookies preferences</a>
+    <a href="privacypolicy.html">Privacy Policy</a>
+  </body>
 </html>
