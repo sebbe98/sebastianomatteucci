@@ -10,7 +10,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-  </head>
+</head>
   <body>
     <header>
       <div class="header-container">
@@ -42,7 +42,7 @@
         <img src="img/propic.JPG" alt="Sebastiano Matteucci" />
         <h1>Sebastiano Matteucci</h1>
         <p>Freelance Developer</p>
-        <button>Hire Me</button>
+       
         <div class="social-card">
           <a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a>
           <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></a>
@@ -54,32 +54,85 @@
 
     <section id="about" class="section">
       <h2>About Me</h2>
-      <p>
-        Sono un freelance developer appassionato di tecnologia e design. Mi
-        piace creare soluzioni semplici ed eleganti per problemi complessi.
-      </p>
+      <div class="project-card">
+        <p>
+          Sono un appassionato di tecnologia e design. Mi piace creare soluzioni
+          semplici ed eleganti e sfidare le mie capacità ogni giorno.<br />
+          Ho fatto un Master di Reti E Sistemi presso la Scuola ELIS di Roma con
+          particolare attenzione a Linux dove ho conseguito la Certificazione LPIC-1.<br>
+          Ho iniziato a lavore nel settore informatico e nel tempo libero mi dedico allo studio 
+          di programmazione di siti web.
+        </p>
+      </div>
     </section>
 
     <section id="projects" class="section">
-      <h2>Projects</h2>
+      <h2>Coding Skills</h2>
       <div class="project-grid">
         <div class="project-card">
-          <h3>Project 1</h3>
+          <h3>HTML5</h3>
+          <div class="progress-circle">
+            <svg class="circle-svg" viewBox="0 0 100 100">
+              <circle class="circle-bg" cx="50" cy="50" r="45"></circle>
+              <circle class="circle-progress" cx="50" cy="50" r="45" style="stroke-dasharray: 235.05, 282.74;"></circle> <!-- 80% -->
+            </svg>
+            <span class="progress-text">80%</span>
+          </div>
+        </div>  
+        <div class="project-card">
+          <h3>CSS</h3>
+          <div class="progress-circle">
+            <svg class="circle-svg" viewBox="0 0 100 100">
+              <circle class="circle-bg" cx="50" cy="50" r="45"></circle>
+              <circle class="circle-progress" cx="50" cy="50" r="45" style="stroke-dasharray: 212.05, 282.74;"></circle> <!-- 75% -->
+            </svg>
+            <span class="progress-text">75%</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>JAVASCRIPT</h3>
+          <div class="progress-circle">
+            <svg class="circle-svg" viewBox="0 0 100 100">
+              <circle class="circle-bg" cx="50" cy="50" r="45"></circle>
+              <circle class="circle-progress" cx="50" cy="50" r="45" style="stroke-dasharray: 113.10, 282.74;"></circle> <!-- 80% -->
+            </svg>
+            <span class="progress-text">40%</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>VISUAL BASIC</h3>
+          <div class="progress-circle">
+            <svg class="circle-svg" viewBox="0 0 100 100">
+              <circle class="circle-bg" cx="50" cy="50" r="45"></circle>
+              <circle class="circle-progress" cx="50" cy="50" r="45" style="stroke-dasharray: 169.64, 282.74;"></circle> <!-- 80% -->
+            </svg>
+            <span class="progress-text">60%</span>
+          </div>
+        </div>
+      </section>
+        <section id="projects" class="section">
+          <h2>OS Skills</h2>
+        <div class="project-grid">
+        <div class="project-card">
+          <h3>Windows</h3>
           <p>Descrizione breve del progetto.</p>
         </div>
         <div class="project-card">
-          <h3>Project 2</h3>
+          <h3>Linux</h3>
           <p>Descrizione breve del progetto.</p>
         </div>
         <div class="project-card">
-          <h3>Project 3</h3>
+          <h3>Macos</h3>
           <p>Descrizione breve del progetto.</p>
         </div>
+
+      </div>
       </div>
     </section>
 
     <section id="contact" class="section">
       <h2>Contact</h2>
+      <button>Manda una Mail</button>
       <p>
         Scrivimi a: <a href="mailto:example@email.com">example@email.com</a>
       </p>
@@ -87,6 +140,11 @@
 
     <footer>
       <p>&copy; 2025 Sebastiano Matteucci. All rights reserved.</p>
+
+      <!-- Below is the link that users can use to open Preferences Center to change their preferences. Do not modify the ID parameter. Place it where appropriate, style it as needed. -->
+
+      <a href="#" id="open_preferences_center">Update cookies preferences</a>
+      <a href="privacypolicy.html">Privacy Policy</a>
     </footer>
 
     <script>
@@ -139,7 +197,9 @@
         });
       });
     </script>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+<script src="js/scripts.js"></script>
     <noscript
       >Cookie Consent by
       <a href="https://www.freeprivacypolicy.com/"
@@ -147,10 +207,5 @@
       ></noscript
     >
     <!-- End Cookie Consent by FreePrivacyPolicy.com https://www.FreePrivacyPolicy.com -->
-
-    <!-- Below is the link that users can use to open Preferences Center to change their preferences. Do not modify the ID parameter. Place it where appropriate, style it as needed. -->
-
-    <a href="#" id="open_preferences_center">Update cookies preferences</a>
-    <a href="privacypolicy.html">Privacy Policy</a>
   </body>
 </html>
